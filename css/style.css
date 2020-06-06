@@ -1,0 +1,16 @@
+form{
+    display: flex;
+    flex-flow: column;
+}
+
+form > label {
+    margin: 10px 10px;
+}
+
+form > input {
+    margin: 0px 10px 20 10px;
+}
+
+form > input:valid{
+    background-color: rgb(213, 243, 213);   
+}
