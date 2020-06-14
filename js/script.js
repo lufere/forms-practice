@@ -1,6 +1,8 @@
 let email = document.querySelector('#email');
-
+let country = document.querySelector('#country');
 let zipcode = document.querySelector('#zip');
+let password = document.querySelector('#password');
+let passwordConfirm = document.querySelector('#passwordConfirm');
 
 
 email.addEventListener('focusout', function(){
@@ -18,5 +20,29 @@ zipcode.addEventListener('focusout', function(){
     }
     if (zipcode.validity.rangeUnderflow || zipcode.validity.rangeOverflow){
         alert("Zip codes are 5 characters long!");
+    }
+})
+
+country.addEventListener('focusout', function(){
+    if(country.validity.patternMismatch){
+        alert("There are no countries with numbers on their name!");
+    }
+    if(country.validity.tooShort){
+        alert("There are no countries with less than 4 characters!")
+    }
+})
+
+password.addEventListener('focusout', function(){
+    if(!password.validity.valid){
+        alert("Password must have a lower case character, an upper case character, a number and be at least 6 characters long");
+    }
+})
+
+passwordConfirm.addEventListener('focusout', function(){
+    if(password.value != passwordConfirm.value){
+        passwordConfirm.setCustomValidity("Invalid field");
+        alert("Passwords don't match!");
+    }else{
+        passwordConfirm.setCustomValidity("");
     }
 })
