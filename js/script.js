@@ -3,6 +3,7 @@ let country = document.querySelector('#country');
 let zipcode = document.querySelector('#zip');
 let password = document.querySelector('#password');
 let passwordConfirm = document.querySelector('#passwordConfirm');
+let submit = document.querySelector('#submit');
 
 
 email.addEventListener('focusout', function(){
@@ -44,5 +45,13 @@ passwordConfirm.addEventListener('focusout', function(){
         alert("Passwords don't match!");
     }else{
         passwordConfirm.setCustomValidity("");
+    }
+})
+
+submit.addEventListener('click', function(){
+    if(email.validity.valid && country.validity.valid && zipcode.validity.valid && password.validity.valid && password.validity.valid){
+        alert("High five!");
+    }else{
+        alert("Fix the errors!");
     }
 })

@@ -14,3 +14,8 @@ form > input {
 form > input:valid{
     background-color: rgb(213, 243, 213);   
 }
+
+#submit{
+    margin: 10px;
+    width: 100px;
+}
